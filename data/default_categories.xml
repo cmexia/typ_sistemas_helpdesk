@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+	<record id="first_category" model="project.issue.">
+		<field name="issue_category">Velocidad</field>
+	</record>
+
+	<record id="second_category" model="project.issue.category">
+		<field name="issue_category">Incidencia</field>
+	</record>
+</data>
+</openerp>

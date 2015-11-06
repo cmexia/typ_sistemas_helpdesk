@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+        <record id="dropshiping_sale_view_order_form_typ_new" model="ir.ui.view">
+            <field name="name">project.issue.project.issue.form2</field>
+            <field name="model">project.issue</field>
+            <field name="inherit_id" ref="project_issue.project_issue_form_view"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position='attributes'>
+                    <attribute name='required'>1</attribute>
+                  </field>
+                  <field name="categ_ids" position='attributes'>
+                    <attribute name='required'>1</attribute>
+                  </field>
+                <field name="partner_id" position="after">
+                    <field name="company_id"/>
+                    <field name="issue_category"/>          
+                </field>
+                <field name="priority" position="replace">
+                  <field name="priority"/>
+                  <field name="deadline"/>
+                </field>
+                <field name="description" position="replace">
+                  <field name="notes" placeholder="Favor de ser lo mas especifico posible. Indicar Modulo,Compañia,Usuario de sistema,Folio del documento, Mensaje de error completo, Adjuntos"/>
+                </field>
+                <xpath expr="//page[@string='Description']" position="after">
+                        <page string="Solucion Tecnica">
+                            <field name="solution" placeholder="type the solution"/>
+                        </page>
+                </xpath>
+            </field>
+        </record>
+</data>
+</openerp>
