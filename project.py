@@ -19,6 +19,11 @@ class project_issue(osv.osv):
         'deadline':fields.date('Fecha compromiso'),
         'notes':fields.text('Incidencia'),
         'solution':fields.text('Solucion'),
+        'company_id': fields.selection(
+            (('CEDIS','CEDIS'),('TYP_HMO','Hermosillo'),('TYP_OBG','Obregon'),
+             ('TYP_CLN','Culiacan'),('TYP_GDL','Guadalajara'),('TYP_LPZ','La Paz'),
+             ('TYP_LMS','Los Mochis'),('TYP_MXL','Mexicali'),('TYP_NGZ','Nogales'),
+             ('TYP_TJ','Tijuana')),'Envio a Tienda:'),
     }
 
 # class project_issue_category(osv.osv):
@@ -29,11 +34,11 @@ class project_issue(osv.osv):
 #         'category_id':fields.one2many('project_issue','category_id','Categoria')
 #     }
 
-class company_assignment(osv.osv):
-    _name = 'res.company'
-    _inherit = 'res.company'
-    _columns = {
-        'company_id': fields.one2many('project.issue','company_id','Sucursal'),
+# class company_assignment(osv.osv):
+#     _name = 'res.company'
+#     _inherit = 'res.company'
+#     _columns = {
+#         'company_id': fields.one2many('project.issue','company_id','Sucursal'),
 
-    }
+#     }
     
